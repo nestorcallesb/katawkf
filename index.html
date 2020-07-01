@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Control Kata WKF 2020</title>
+	<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no shrink-to-fit=no">
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css">
+
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+	<script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+	<script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="./css/kata.css">
+
+	<script type="text/javascript" src="./js/datos.js"></script>
+	<script type="text/javascript" src="./js/kata.min.js"></script>
+</head>
+<body>
+	<div id="principal" class="container cuerpo">
+		<div id="cabecera">
+			<div class="row ">
+				<img src="./imagenes/Encabezado-Karate.png" class="img-fluid justify-content-center p-auto m-auto" alt="Responsive image" />
+			</div>
+		</div>
+		<div class="card-body">
+			<div class="cuerpo" id="competidor">
+			<!--	Input Inicial de Registro de Competidor	-->
+				<div class="row row-cols-1 row-cols-md-2 align-items-center m-auto">
+					<div class="col m-0 p-0 ">
+						<div class="input-group mb-3">
+							<div class="input-group-prepend">
+								<span class="input-group-text" id="inputGroup-sizing-default">Competidor</span>
+							</div>
+							<input type="text" class="form-control" aria-label="Competidor" aria-describedby="inputGroup-sizing-default" id="atleta">
+						</div>
+					</div>
+					<div class="col m-0 p-0 ">
+						<div class="input-group mb-3">
+							<div class="input-group-prepend">
+								<span class="input-group-text" id="inputGroup-sizing-default">Kata</span>
+							</div>
+							<select class="custom-select" id="kata">
+								<option> -- Seleccione Kata -- </option>
+							</select> 
+						</div>
+					</div>
+				</div>
+
+			<!--	Panel de Etiqueta de Puntuacion y Resultados	-->
+
+				<div class="row row-cols-10 justify-content-center ">
+					<div class="col cabecera d-none d-sm-none d-md-block ">
+						
+					</div>
+					<div class="col cabecera d-none d-sm-none d-md-block ">
+						Juez 1
+					</div>
+					<div class="col cabecera d-none d-sm-none d-md-block ">
+						Juez 2
+					</div>
+					<div class="col cabecera d-none d-sm-none d-md-block ">
+						Juez 3
+					</div>
+					<div class="col cabecera d-none d-sm-none d-md-block ">
+						Juez 4
+					</div>
+					<div class="col cabecera d-none d-sm-none d-md-block ">
+						Juez 5
+					</div>
+					<div class="col cabecera d-none d-sm-none d-md-block ">
+						Juez 6
+					</div>
+					<div class="col cabecera d-none d-sm-none d-md-block ">
+						Juez 7
+					</div>
+					<div class="col-1 cabecera d-none d-sm-none d-md-block ">
+						Total
+					</div>
+					<div class="col-1 cabecera d-none d-sm-none d-md-block ">
+						Suma
+					</div>
+				</div>
+
+			<!--	Panel de Puntuacion para la Calificacion Tecnica	-->
+
+				<div class="row row-cols-7 row-cols-md-10 justify-content-center tecnica">
+					<div class="col col-10 col-md d-block">
+						Tecnica
+					</div>
+					<div class="col  col-3 col-md">
+						<select class="custom-select pto technical " id="juez-1">
+							<option> -- </option>
+						</select> 
+					</div>
+					<div class="col  col-3 col-md">
+						<select class="custom-select pto technical " id="juez-2">
+							<option> -- </option>
+						</select> 
+					</div>
+					<div class="col  col-3 col-md">
+						<select class="custom-select pto technical " id="juez-3">
+							<option> -- </option>
+						</select> 
+					</div>
+					<div class="col  col-3 col-md">
+						<select class="custom-select pto technical " id="juez-4">
+							<option> -- </option>
+						</select> 
+					</div>
+					<div class="col  col-3 col-md">
+						<select class="custom-select pto technical " id="juez-5">
+							<option> -- </option>
+						</select> 
+					</div>
+					<div class="col  col-3 col-md">
+						<select class="custom-select pto technical " id="juez-6">
+							<option> -- </option>
+						</select> 
+					</div>
+					<div class="col  col-3 col-md">
+						<select class="custom-select pto technical " id="juez-7">
+							<option> -- </option>
+						</select> 
+					</div>
+					<div class="col-5 col-md-1 counter display " id="technical">0.0</div>
+					<div class="col-5 col-md-1 counter display " id="total_tech">0.0</div>
+				</div>
+
+			<!--	Panel de Puntuacion para la Calificacion Atletica	-->
+
+				<div class="row row-cols-7 row-cols-md-10 justify-content-center atletica">
+					<div class="col-10 col-md ">
+						Atletica
+					</div>
+					<div class="col col-3 col-md">
+						<select class="custom-select pto athletic " id="juez-1">
+							<option> -- </option>
+						</select> 
+					</div>
+					<div class="col col-3 col-md">
+						<select class="custom-select pto athletic " id="juez-2">
+							<option> -- </option>
+						</select> 
+					</div>
+					<div class="col col-3 col-md">
+						<select class="custom-select pto athletic " id="juez-3">
+							<option> -- </option>
+						</select> 
+					</div>
+					<div class="col col-3 col-md">
+						<select class="custom-select pto athletic " id="juez-4">
+							<option> -- </option>
+						</select> 
+					</div>
+					<div class="col col-3 col-md">
+						<select class="custom-select pto athletic " id="juez-5">
+							<option> -- </option>
+						</select> 
+					</div>
+					<div class="col col-3 col-md">
+						<select class="custom-select pto athletic " id="juez-6">
+							<option> -- </option>
+						</select> 
+					</div>
+					<div class="col col-3 col-md">
+						<select class="custom-select pto athletic " id="juez-7">
+							<option> -- </option>
+						</select> 
+					</div>
+					<div class="col-5 col-md-1 counter display " id="athletic">0.0</div>
+					<div class="col-5 col-md-1 counter display" id="total_ath">0.0</div>
+				</div>
+			<br>
+
+			<!--	Panel de Puntuacion Total	-->
+
+				<div class="row row-cols-4 justify-content-center m-auto titulo">
+					<div class="col titulo">
+						Total:
+					</div>
+					<div class="col counter display " id="puntuacion" >0.0</div>
+				</div>
+			
+			<!--	Fin de Card-Body	-->
+			
+			</div>
+		</div>
+	</div>
+	<div class="row row-cols-1 justify-content-center m-auto mb-3 titulo">
+		<div class="col col-4">
+			<button class="grp-btn btn btn-primary btn-block btn-ctrl m-2 titulo" id="YAME">
+				<i class="fas fa-trophy">
+					Registrar Kata 
+				</i>
+			</button>
+		</div>
+	</div>
+	<div class="d-none d-sm-block"><hr></div>
+	<!--	SECCION N°7: Consola de registro de eventos	-->
+	<div class="card">
+		<div class="card-body">
+			<div class="cuerpo" id="consola">
+				<table class="table table-hover table-condensed table-bordered" id="tabla">
+					<thead style="background-color: #dc3545;color: white; font-weight: bold;">
+						<tr>
+							<th>Atleta</th>
+							<th>Kata</th>
+							<th>Tech Total</th>
+							<th>Atlh Total</th>
+							<th>Total</th>							
+						</tr>
+					</thead>
+					<tfoot style="background-color: #ccc;color: white; font-weight: bold;">		
+						<tr>
+							<th>Atleta</th>
+							<th>Kata</th>
+							<th>Tech Total</th>
+							<th>Atlh Total</th>
+ 							<th>Total</th>		
+						</tr>
+					</tfoot>
+					<tbody style="background-color: white;color: gray; font-weight: bold;" id="foot">
+					</tbody>
+				</table>				
+			</div>
+		</div>
+		<div class="card-body">
+			<div class="cuerpo" id="print">
+				
+			</div>
+		</div>
+	</div>
+
+</body>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('#tabla').DataTable( {
+ 			"Length" : 5,   // number of rows to display
+ 			"order": [
+	 			[ 2, "desc" ],
+	 			[ 3, "desc" ],
+	 			[ 4, "desc" ]
+ 			],
+ 			"columns": [
+	 			{ data: 'atleta' },
+	 			{ data: 'kata' },
+	 			{ data: 'technical' },
+	 			{ data: 'athletic' },
+	 			{ data: 'total' }
+ 			]
+	 	});
+	});
+
+</script>
+</html>

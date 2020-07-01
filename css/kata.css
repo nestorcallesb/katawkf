@@ -1,0 +1,162 @@
+	.card-body {
+		vertical-align: middle;
+		text-align: center;
+		font-weight:bold;
+		font-family:'Consola, Helvetica, Arial';
+		box-sizing: border-box;	
+	}
+	.cuerpo {
+		background: url( ../imagenes/Logo-Transparencia-Uchiague.png );
+		background-position: center center;
+	}
+
+	.btn-ctrl {
+		vertical-align: middle;
+		text-align: center;
+		margin: 0.1px 0.1px;
+		padding: 0;
+	}
+
+	/*	background: #101010; */
+	.titulo {
+		font-size: 1.5em;
+	}
+
+	.fuente {
+		color: #fff;
+	}
+
+	.fuente-btn {
+		color: #fff;
+		font-size: 3em;
+	}
+	
+	.counter {
+		border: 0px #000 solid;
+		background: #3B3434;
+		color: #fff;
+		font-size: 1.25em;
+	}
+
+	.cabecera {
+		background-color:rgba(150,50,50,0.6);
+		color: #fff;
+		font-size: 1.25em;
+	}
+	.tecnica {
+		color: #fff;
+		background-color:rgba(150,50,50,0.6);
+		font-size: 1.25em;
+	}
+
+	.atletica {
+		color: #fff;
+		background-color:rgba(50,50,150,0.6);
+		font-size: 1.25em;
+	}
+
+	.panel {
+		background-color:rgba(0,255,0,0.6);		
+	}
+
+	/* // aplicara las conf cuando las dimensiones de largo sean menor a 992px */
+	@media (max-width: 992px){ 
+		.titulo {
+			font-size: 1.30em;
+		}
+		.cabecera {
+			font-size: 0.8em;
+		}
+		.atletica {
+			font-size: 1em;
+		}	
+		.tecnica {
+			font-size: 1em;
+		}		
+	}
+	/*	// aplicara las conf cuando las dimensiones de largo sean menor a md 768px */
+	@media  (max-width: 768px){ 
+		.titulo {
+			font-size: 1.25em;
+		}
+		.atletica {
+			font-size: 1em;
+		}	
+		.tecnica {
+			font-size: 1em;
+		}	
+		.display {
+			padding: 0px, 0px;
+		}		
+	}
+	/*	// aplicara las conf cuando las dimensiones de largo sean menor a sm 576px */
+	@media  (max-width: 576px){ 
+		.titulo {
+			font-size: 1em;
+		}
+		.fuente {
+			font-size: 1.6em;
+		}
+		.btn-ctrl {
+			font-size: 1em;
+			padding: 0;
+			margin: 0;
+		}
+	}
+	/*	// aplicara las conf cuando las dimensiones de largo sean menor a 320px  */
+	@media  (max-width: 320px){ 
+		.titulo {
+			font-size: 0.8em;
+		}
+		.atletica {
+			font-size: 0.8em;
+			padding: 0;
+			margin: 0;
+		}	
+		.tecnica {
+			font-size: 0.8em;
+			padding: 0;
+			margin: 0;
+		}	
+	}
+
+	.bordes {
+		border: 1px #000 solid;
+		vertical-align: middle;
+		text-align: center;
+		margin: 0.1px 0.1px;
+		padding: 0;		
+	}
+/*
+
+
+	proporciones escalables o adaptativas
+		em (Ems):  Un em es igual al tamaño de fuente actual. 
+		Siempre nos proporciona valores relativos al font-size del elemento	; 
+		rem (REm):  Un rem es igual al tamaño de fuente del elemento RAIZ. un rem siempre sera igual a 16px 
+		font-size: calc(1em + 1vw) ; Formula para cambiar tamaño de la letra de forma Responsive
+		Aplica  em para propiedades que cambian con el font-size del elemento.
+		Aplica  rem para todo lo demás.
+	 unidades de longitud relativas a la pantalla de visualización
+		vw: el valor vw indica la proporcionalidad de un estilo escalable como font-size 
+		o cualquier otro valor como  padding o height con respecto a la pantalla donde se va a visualizar;
+	ICONOS
+<i class="fas fa-plus-square"></i>
+<i class="far fa-plus-square"></i>
+<i class="fas fa-minus-square"></i>
+<i class="far fa-minus-square"></i>
+<i class="fas fa-torii-gate"></i>
+<i class="far fa-play-circle"></i>	Comenzar
+<i class="far fa-pause-circle"></i>	Pausa
+<i class="far fa-stop-circle"></i>	Detener
+<i class="fas fa-power-off"></i>	Reiniciar
+<i class="fas fa-trophy"></i>	Ganador
+<i class="far fa-window-close"></i>	Perdedor
+<i class="far fa-flag"></i>	Perdedor
+<i class="fas fa-check"></i>	Check
+
+IPPON -> 	</i><i class="fas fa-circle"></i><i class="fas fa-minus"></i><i class="far fa-circle"></i>
+WASA-ARI ->	<i class="far fa-circle"></i><i class="fas fa-minus"></i></i><i class="far fa-circle"></i>
+YUKO ->		</i><i class="fas fa-minus"></i>
+
+*/
